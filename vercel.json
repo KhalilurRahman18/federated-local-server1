@@ -2,22 +2,22 @@
     "version": 2,
     "builds": [
       {
-        "src": "remix-app/package.json",
+        "src": "remix/package.json",
         "use": "@vercel/node"
       },
       {
-        "src": "flask-app/app.py",
+        "src": "api/app.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "flask-app/app.py"
+        "dest": "api/app.py"
       },
       {
         "src": "/(.*)",
-        "dest": "remix-app/$1"
+        "dest": "remix/$1"
       }
     ]
   }
